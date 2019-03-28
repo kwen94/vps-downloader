@@ -15,7 +15,7 @@ def generate(file_obj):
         else:
             break
 
-@app.route('/erha/download/20190131-141414/', methods=['GET'])
+@app.route('/kwen/download', methods=['GET'])
 def download_file():
     try:
         url = request.args.get('url')
