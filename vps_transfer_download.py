@@ -15,7 +15,7 @@ def generate(file_obj):
         else:
             break
 
-@app.route('/kwen/download', methods=['GET'])
+@app.route('/vps', methods=['GET'])
 def download_file():
     try:
         url = request.args.get('url')
