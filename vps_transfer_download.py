@@ -20,7 +20,8 @@ def download_file():
     try:
         url = request.args.get('url')
         filename = os.path.basename(url)
-        file_obj = requests.get(url, stream=True)
+        req_ranges = request.headers.get('Range')
+        file_obj = requests.get(url, stream=True, headers={'Range': req_ranges})
         headers = file_obj.headers
 
         s = Response(generate(file_obj), content_type=headers.get('Content-Type'))
